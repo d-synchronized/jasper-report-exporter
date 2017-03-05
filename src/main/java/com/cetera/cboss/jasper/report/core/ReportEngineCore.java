@@ -82,7 +82,7 @@ public class ReportEngineCore {
 	 * @throws ReportEngineException the report engine exception
 	 * @throws TemplateLoaderException the template loader exception
 	 */
-	public <ReportVO extends BaseReportVO> JasperPrint compileExportReport(final InputStream jrxmlSourceStream) throws ReportEngineException, TemplateLoaderException {
+	private <ReportVO extends BaseReportVO> JasperPrint compileExportReport(final InputStream jrxmlSourceStream) throws ReportEngineException, TemplateLoaderException {
 		final ReportDSLoader<?> reportDSLoader = reportDSFactory.fetchReportDatasource();
 		final JRDataSource jrDataSource = reportDSLoader.loadReportDatasource();
 		final Map<String, Object> templateParams = this.templateLoaderFactory.fetchTemplateLoader().getLoadTemplateRequest().getTemplateParameters();
