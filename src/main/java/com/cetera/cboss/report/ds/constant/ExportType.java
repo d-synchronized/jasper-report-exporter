@@ -6,25 +6,57 @@ package com.cetera.cboss.report.ds.constant;
 public enum ExportType {
 
     /** The pdf. */
-    PDF,
+    PDF(".pdf"),
 
     /** The xls. */
-    XLS,
+    XLS(".xls"),
 
     /** The csv. */
-    CSV,
+    CSV(".csv"),
 
     /** The docx. */
-    DOCX,
+    DOCX(".docx"),
 
     /** The odt. */
-    ODT,
+    ODT(".odt"),
 
     /** The rtf. */
-    RTF,
+    RTF(".rtf"),
 
     /** The html. */
-    HTML;
+    HTML(".html");
+
+    /** The export type. */
+    String exportType;
+
+    /**
+     * Instantiates a new report export type.
+     *
+     * @param exportType
+     *            the export type
+     */
+    private ExportType(final String exportType) {
+        this.exportType = exportType;
+    }
+
+    /**
+     * Gets the export type.
+     *
+     * @return the export type
+     */
+    public String getExportType() {
+        return exportType;
+    }
+
+    /**
+     * Sets the export type.
+     *
+     * @param exportType
+     *            the new export type
+     */
+    public void setExportType(String exportType) {
+        this.exportType = exportType;
+    }
 
     /**
      * From string.
@@ -35,7 +67,7 @@ public enum ExportType {
      */
     public static ExportType fromString(final String exportType) {
         for (final ExportType export : ExportType.values()) {
-            if (export.toString().equals(export)) {
+            if (export.toString().equals(exportType)) {
                 return export;
             }
         }
