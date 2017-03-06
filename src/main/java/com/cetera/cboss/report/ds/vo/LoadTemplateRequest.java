@@ -4,6 +4,8 @@ import java.util.Map;
 
 /**
  * The Class LoadTemplateRequest.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class LoadTemplateRequest {
 

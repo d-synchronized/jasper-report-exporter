@@ -5,6 +5,8 @@ import com.cetera.cboss.jasper.report.ds.loader.exception.TemplateLoaderExceptio
 
 /**
  * A factory for creating TemplateLoader objects.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class TemplateLoaderFactory {
 

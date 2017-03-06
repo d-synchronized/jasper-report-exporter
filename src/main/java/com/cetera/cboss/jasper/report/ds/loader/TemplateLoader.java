@@ -7,6 +7,8 @@ import com.cetera.cboss.report.ds.vo.LoadTemplateRequest;
 
 /**
  * The Class TemplateLoader.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public abstract class TemplateLoader {
 

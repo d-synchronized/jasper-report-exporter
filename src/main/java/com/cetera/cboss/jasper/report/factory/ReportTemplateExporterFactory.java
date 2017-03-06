@@ -4,6 +4,8 @@ import com.cetera.cboss.jasper.report.exporter.ReportTemplateExporter;
 
 /**
  * A factory for creating ReportTemplateExporter objects.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class ReportTemplateExporterFactory {
 

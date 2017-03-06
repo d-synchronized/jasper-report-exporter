@@ -18,9 +18,11 @@ import com.cetera.cboss.report.ds.constant.ExportType;
 import com.cetera.cboss.report.ds.vo.LoadTemplateRequest;
 
 /**
- * The Class JasperReportExporter.
+ * The Class JasperReportExporterTest.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
-public class JasperReportExporter {
+public class JasperReportExporterTest {
 
 	/**
 	 * The main method.

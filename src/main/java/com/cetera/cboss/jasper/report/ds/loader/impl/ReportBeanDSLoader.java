@@ -10,6 +10,8 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 /**
  * The Class ReportBeanDSLoader.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class ReportBeanDSLoader extends ReportDSLoader<TaskGDCReportDetail> {
 

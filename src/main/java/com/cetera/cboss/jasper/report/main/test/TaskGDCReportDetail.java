@@ -4,6 +4,8 @@ import com.cetera.cboss.report.ds.vo.BaseReportVO;
 
 /**
  * The Class TaskGDCReportDetail.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class TaskGDCReportDetail extends BaseReportVO {
 

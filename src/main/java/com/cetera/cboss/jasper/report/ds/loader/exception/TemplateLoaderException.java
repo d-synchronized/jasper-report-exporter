@@ -2,6 +2,8 @@ package com.cetera.cboss.jasper.report.ds.loader.exception;
 
 /**
  * The Class TemplateLoaderException.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class TemplateLoaderException extends Exception {
 

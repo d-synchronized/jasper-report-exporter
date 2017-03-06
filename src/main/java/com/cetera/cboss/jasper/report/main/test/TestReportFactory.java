@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * A factory for creating TestReport objects.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class TestReportFactory {
 
@@ -19,8 +21,8 @@ public class TestReportFactory {
 		final TaskGDCReportDetail taskGDCReportDetail = new TaskGDCReportDetail();
 		taskGDCReportDetail.setCoordinatorName("Dishant Anand");
 		taskGDCReportDetail.setNumberOfTasks(2);
-		taskGDCReportDetail.setTotalGDC(20.00);
 		taskGDCReportDetails.add(taskGDCReportDetail);
+		taskGDCReportDetail.setTotalGDC(20.00);
 
 		final TaskGDCReportDetail taskGDCReportDetail1 = new TaskGDCReportDetail();
 		taskGDCReportDetail1.setCoordinatorName("Tajinder Singh");

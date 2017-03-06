@@ -6,6 +6,8 @@ import com.cetera.cboss.report.ds.vo.BaseReportVO;
 
 /**
  * The Class JasperDataLoader.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public abstract class JasperDataLoader {
 

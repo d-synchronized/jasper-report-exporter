@@ -2,6 +2,8 @@ package com.cetera.cboss.jasper.report.core.exception;
 
 /**
  * The Class ReportEngineException.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class ReportEngineException extends Exception {
 

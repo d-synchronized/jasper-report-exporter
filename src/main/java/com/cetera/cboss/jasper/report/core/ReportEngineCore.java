@@ -24,6 +24,8 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  * The Class ReportEngineCore.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class ReportEngineCore {
 

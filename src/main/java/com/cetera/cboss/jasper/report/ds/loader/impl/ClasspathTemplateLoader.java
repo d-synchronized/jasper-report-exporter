@@ -11,6 +11,8 @@ import com.cetera.cboss.report.ds.vo.LoadTemplateRequest;
 
 /**
  * The Class ClasspathTemplateLoader.
+ * 
+ * @author <a href="mailto:d.synchronized@gmail.com">Dishant Anand</a>
  */
 public class ClasspathTemplateLoader extends TemplateLoader {
 
