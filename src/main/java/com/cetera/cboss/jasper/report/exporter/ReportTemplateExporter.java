@@ -1,9 +1,5 @@
 package com.cetera.cboss.jasper.report.exporter;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-
 import org.apache.commons.lang.StringUtils;
 
 import com.cetera.cboss.jasper.report.core.exception.ReportEngineException;
@@ -17,6 +13,18 @@ import net.sf.jasperreports.engine.JasperPrint;
  * The Class ReportTemplateExporter.
  */
 public class ReportTemplateExporter {
+   
+    /** The output directory. */
+    private String outputDirectory;
+    
+    /**
+     * Instantiates a new report template exporter.
+     *
+     * @param outputDirectory the output directory
+     */
+    public ReportTemplateExporter(final String outputDirectory){
+        this.outputDirectory = outputDirectory;
+    }
 
 	/**
 	 * Export report.
@@ -27,14 +35,13 @@ public class ReportTemplateExporter {
 	 * @return the output stream
 	 * @throws ReportEngineException the report engine exception
 	 */
-	public OutputStream exportReport(final JasperPrint jasperPrint, final ExportType exportType, final String outputDirectory) throws ReportEngineException {
+	public String exportReport(final JasperPrint jasperPrint, final ExportType exportType) throws ReportEngineException {
 		try {
-			final String tempDirectory = StringUtils.isNotBlank(outputDirectory) ? outputDirectory : System.getProperty("java.io.tmpdir");
-			final FileOutputStream fileOutputStream = new FileOutputStream(tempDirectory);
+			final String fullyClassifiedFileName = StringUtils.isNotBlank(outputDirectory) ? outputDirectory : System.getProperty("java.io.tmpdir");
 			switch (exportType) {
 				case PDF:
-					JasperExportManager.exportReportToPdfStream(jasperPrint, fileOutputStream);
-					return fileOutputStream;
+					JasperExportManager.exportReportToPdfFile(jasperPrint, fullyClassifiedFileName);
+					return fullyClassifiedFileName;
 
 				case DOCX:
 					return null;
@@ -48,11 +55,18 @@ public class ReportTemplateExporter {
 				default:
 					throw new ReportEngineException("Error occurred while exporting report to '" + exportType.toString() + "', Error - Export Type not supported");
 			}
-		} catch (final IOException ioException) {
-			throw new ReportEngineException("Error occurred while exporting report to '" + exportType.toString() + "', Error - ", ioException);
 		} catch (JRException jrException) {
 			throw new ReportEngineException("Error occurred while exporting report to '" + exportType.toString() + "', Error", jrException);
 		}
 	}
+
+    /**
+     * Gets the output directory.
+     *
+     * @return the output directory
+     */
+    public String getOutputDirectory() {
+        return outputDirectory;
+    }
 
 }

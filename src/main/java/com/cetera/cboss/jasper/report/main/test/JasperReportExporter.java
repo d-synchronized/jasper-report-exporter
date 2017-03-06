@@ -1,9 +1,9 @@
 package com.cetera.cboss.jasper.report.main.test;
 
 import java.io.FileNotFoundException;
-import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.cetera.cboss.jasper.report.core.ReportEngineCore;
 import com.cetera.cboss.jasper.report.core.exception.ReportEngineException;
@@ -32,7 +32,7 @@ public class JasperReportExporter {
 	 */
 	public static void main(final String args[]) throws ReportEngineException, FileNotFoundException, TemplateLoaderException {
 
-		final LoadTemplateRequest loadTemplateRequest = new LoadTemplateRequest("task_gdc_report.jrxml", "C://Users//dishant.anand//spring-rnd//jasper-report-helper//src//main//resources//",
+		final LoadTemplateRequest loadTemplateRequest = new LoadTemplateRequest("task_gdc_report.jrxml", "C://Users//AnandD//git//jasper-report-exporter/src//main//resources",
 		        new HashMap<>());
 
 		// Plug in the template loader to load the template.
@@ -42,7 +42,7 @@ public class JasperReportExporter {
 
 		// Plug in the template exporter to export to various formats.
 		final ReportTemplateExporterFactory reportTemplateExporterFactory = new ReportTemplateExporterFactory();
-		reportTemplateExporterFactory.initializeReportExporter(new ReportTemplateExporter());
+		reportTemplateExporterFactory.initializeReportExporter(new ReportTemplateExporter("C://Users//AnandD//reports//task_transition_report.pdf"));
 
 		// Plug in the report DS to fetch the report details that needs to be
 		// filled in the report.
@@ -53,9 +53,8 @@ public class JasperReportExporter {
 
 		final ReportEngineCore reportEngineCore = new ReportEngineCore(reportTemplateExporterFactory, reportDSFactory, templateLoaderFactory);
 
-		final OutputStream[] outputStreams = reportEngineCore.generateReportOutput(ExportType.PDF);
-
-		System.out.println(outputStreams);
+		final Map<ExportType,String> fileExports = reportEngineCore.generateReportOutput(ExportType.PDF);
+		System.out.println(fileExports);
 	}
 
 }

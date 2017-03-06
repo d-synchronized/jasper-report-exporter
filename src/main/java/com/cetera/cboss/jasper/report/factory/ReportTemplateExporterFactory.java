@@ -27,7 +27,7 @@ public class ReportTemplateExporterFactory {
 	 */
 	public ReportTemplateExporter fetchReportExporter() {
 		if (reportTemplateExporter == null) {
-			reportTemplateExporter = new ReportTemplateExporter();
+			reportTemplateExporter = new ReportTemplateExporter(null);
 		}
 		return reportTemplateExporter;
 	}

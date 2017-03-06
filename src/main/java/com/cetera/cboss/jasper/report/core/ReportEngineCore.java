@@ -1,7 +1,7 @@
 package com.cetera.cboss.jasper.report.core;
 
 import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 import com.cetera.cboss.jasper.report.core.exception.ReportEngineException;
@@ -59,18 +59,15 @@ public class ReportEngineCore {
 	 * @throws ReportEngineException the report engine exception
 	 * @throws TemplateLoaderException the template loader exception
 	 */
-	public <ReportVO extends BaseReportVO> OutputStream[] generateReportOutput(final ExportType... exportTypes) throws ReportEngineException, TemplateLoaderException {
+	public <ReportVO extends BaseReportVO> Map<ExportType,String> generateReportOutput(final ExportType... exportTypes) throws ReportEngineException, TemplateLoaderException {
 
 		final JasperPrint jasperPrint = compileExportReport(templateLoaderFactory.fetchTemplateLoader().loadTemplate());
-		final OutputStream[] exportedReportsStream = new OutputStream[exportTypes.length];
-
-		int index = 0;
+		final Map<ExportType,String> exports = new HashMap<>();
 		for (final ExportType exportType : exportTypes) {
-			final OutputStream outputStream = reportTemplateExporterFactory.fetchReportExporter().exportReport(jasperPrint, exportType, "D://exports");
-			exportedReportsStream[index] = outputStream;
-			index++;
+			final String filePath = reportTemplateExporterFactory.fetchReportExporter().exportReport(jasperPrint, exportType);
+			exports.put(exportType, filePath);
 		}
-		return exportedReportsStream;
+		return exports;
 	}
 
 	/**
