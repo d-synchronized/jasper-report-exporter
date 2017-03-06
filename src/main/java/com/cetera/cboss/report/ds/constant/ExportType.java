@@ -68,7 +68,7 @@ public enum ExportType {
     public static ExportType fromString(final String exportType) {
         for (final ExportType export : ExportType.values()) {
             if (export.toString().equals(exportType)) {
-                return export;
+                 return export;
             }
         }
         return null;
