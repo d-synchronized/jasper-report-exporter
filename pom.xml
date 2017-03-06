@@ -7,33 +7,40 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>jasper-report-helper</name>
-	<url>http://maven.apache.org</url>
+	<name>JASPER REPORT EXPORTER</name>
+	<url>http://www.incedoinc.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.version>3.3</maven.compiler.version>
+		
+		<jasperreportts.version>6.1.0</jasperreportts.version>
+		<itext.version>2.1.7</itext.version>
+		<poi.version>3.7</poi.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.1.0</version>
+			<version>${jasperreportts.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.7</version>
-			<scope>compile</scope>
-			<optional>true</optional>
+			<version>${poi.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
-			<version>2.1.7</version>
-			<scope>compile</scope>
+			<version>${itext.version}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -42,12 +49,25 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>${maven.compiler.version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<contributors>
+		<contributor>
+			<name>Dishant Anand</name>
+			<email>d.synchronized@gmail.com</email>
+			<roles>
+				<role>Senior Software Engineer</role>
+				<role>JBPM Architect</role>
+				<role>OS Contributor</role>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+	</contributors>
 </project>
